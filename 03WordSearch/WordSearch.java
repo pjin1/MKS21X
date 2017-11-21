@@ -3,8 +3,8 @@ import java.util.*;
 
 public class WordSearch {
 	
-	  private char[][] data;
-	  private char[][] solution;
+    private char[][] data;
+    private char[][] solution;
     private Random randgen;
     private ArrayList<String> wordsToAdd;
     private ArrayList<String> wordsAdded;
@@ -15,7 +15,7 @@ public class WordSearch {
     		this(rows, cols, fileName, new Random().nextInt());
     }
 
-	  public WordSearch(int rows, int cols, String fileName, int randSeed){
+    public WordSearch(int rows, int cols, String fileName, int randSeed){
 		  wordsToAdd = new ArrayList<String>();
 		  wordsAdded = new ArrayList<String>();
 		  randgen = new Random(randSeed);
