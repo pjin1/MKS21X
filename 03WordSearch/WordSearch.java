@@ -169,7 +169,7 @@ public class WordSearch {
     	    			ws.fillEmpty();
     	    			System.out.println(ws);
     			}
-    		} catch(NullPointerException e) {System.out.println("drats");}
+    		}
     		catch(ArrayIndexOutOfBoundsException e){
     			System.out.println("Input WordSearch properties as follows: \n java WordSearch <R> <C> <fileName> <seed> <key> "
     					+ "\n <R>: # rows "
