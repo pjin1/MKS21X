@@ -170,14 +170,14 @@ public class WordSearch {
     	    			System.out.println(ws);
     			}
     		} catch(NullPointerException e) {System.out.println("drats");}
-//    		catch(ArrayIndexOutOfBoundsException e){
-//    			System.out.println("Input WordSearch properties as follows: \n java WordSearch <R> <C> <fileName> <seed> <key> "
-//    					+ "\n <R>: # rows "
-//    					+ "\n <C>: # columns "
-//    					+ "\n <fileName>: name of file with desired words "
-//    					+ "\n <seed> -- optional: seed for specified word search "
-//    					+ "\n <key> -- optional: type 'key' for solution");
-//    		}
+    		catch(ArrayIndexOutOfBoundsException e){
+    			System.out.println("Input WordSearch properties as follows: \n java WordSearch <R> <C> <fileName> <seed> <key> "
+    					+ "\n <R>: # rows "
+    					+ "\n <C>: # columns "
+    					+ "\n <fileName>: name of file with desired words "
+    					+ "\n <seed> -- optional: seed for specified word search "
+    					+ "\n <key> -- optional: type 'key' for solution");
+    		}
     }
      
 }
