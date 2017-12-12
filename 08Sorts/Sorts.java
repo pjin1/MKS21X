@@ -60,16 +60,16 @@ public class Sorts {
   }
 
   public static void bubbleSort(int[] ary) {
-	  boolean swapped;
+	  boolean switched;
 	  for (int i = 0; i < ary.length; i++) {
 		  for (int j = 0; j < ary.length-i-1; i++) {
 			  if (ary[j] > ary[j+1]){
 				  swap(ary,j,j+1);
-				  swapped = true;
+				  switched = true;
 			  }    
 		  }
 	  }
-	  if (swapped==false) {
+	  if (switched==false) {
 		  break;
 	  }
   }
