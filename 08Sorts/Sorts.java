@@ -61,13 +61,13 @@ public class Sorts {
 
   public static void bubbleSort(int[] ary) {
 	  for (int i = 0; i < ary.length; i++) {
-		  for (int j = 1; j < ary.length - i; i++) {
-			  if (ary[j - 1] > ary[j]){
-				  int temp = ary[i-1];
-				  int index = i;
+		  for (int j = 0; j < ary.length-i-1; i++) {
+			  if (ary[j] > ary[j+1]){
+				  swap(ary,j+1,j);
 			  }    
 		  }
 	  }
   }
+  
   
 }
