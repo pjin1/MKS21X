@@ -21,8 +21,8 @@ public class temperatureWindow extends JFrame implements ActionListener {
 	    pane = this.getContentPane();
 	    pane.setLayout(new FlowLayout());
 	    
-	    FtoC = new JButton("Fahrenheit to Celcius");
 	    CtoF = new JButton("Celcius to Fahrenheit");
+	    FtoC = new JButton("Fahrenheit to Celcius");
 	    
 	    t = new JTextField(100);
 	
