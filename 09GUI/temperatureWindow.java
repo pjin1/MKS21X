@@ -42,7 +42,7 @@ public class temperatureWindow extends JFrame implements ActionListener {
 		System.out.println(s);
 		double temp = Double.parseDouble(t.getText());
 		
-		if(s.equals("FtoC")){
+		if(s.equals("Fahrenheit to Celcius")){
 			try{
 		    		t.setText("" + (temp - 32) * 5.0 / 9.0);
 		    } 
@@ -51,7 +51,7 @@ public class temperatureWindow extends JFrame implements ActionListener {
 		    }
 		}
 	
-		if(s.equals("CtoF")){
+		if(s.equals("Celcius to Fahrenheit")){
 		    try{
 		    		t.setText("" + (temp * 9.0 / 5.0 + 32));
 		    }
