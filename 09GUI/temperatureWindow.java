@@ -28,7 +28,7 @@ public class temperatureWindow extends JFrame implements ActionListener {
 	
 	    t.addActionListener(this);
 		FtoC.addActionListener(this);
-		CtoF.addActionListener(this);
+t		CtoF.addActionListener(this);
 		
 		pane.add(t);
 		pane.add(FtoC);
@@ -50,10 +50,11 @@ public class temperatureWindow extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e){
 		String s = e.getActionCommand();
 		System.out.println(s);
+		double temp = Double.parseDouble(t.getText());
 		
 		if(s.equals("FtoC")){
 			try{
-		    		t.setText("" + FtoC(Integer.parseInt(t.getText())));
+		    		t.setText("" + FtoC(temp));
 		    } 
 		    catch (NumberFormatException exc){
 		        System.out.println(">:( insert number");
@@ -62,12 +63,13 @@ public class temperatureWindow extends JFrame implements ActionListener {
 	
 		if(s.equals("CtoF")){
 		    try{
-		    		t.setText("" + CtoF(Integer.parseInt(t.getText())));
+		    		t.setText("" + CtoF(temp)));
 		    }
 		    catch (NumberFormatException exc){
 		    		System.out.println(">:( insert number");
 		    }
 		}
+    }
 
 }
 
