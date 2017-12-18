@@ -36,7 +36,7 @@ public class temperatureWindow extends JFrame implements ActionListener {
 	    }
     }
     
-    public class Convert{
+
 	    public static double CtoF(double t){
 	        return t * 9.0 / 5.0 + 32;
 	    }
@@ -45,27 +45,29 @@ public class temperatureWindow extends JFrame implements ActionListener {
 	        return (t - 32) * 5.0 / 9.0 ;
 	    }
 
-    }
+    
     
     public void actionPerformed(ActionEvent e){
 		String s = e.getActionCommand();
 		System.out.println(s);
 		
-		try {
-			double temperature = Double.parseDouble(t.getText());
-			
-			if (s.equals("Celsius to Fahrenheit")){
-				t.setText("" + (temperature * (9.0 / 5.0 ) + 32));
-			}
-			
-			if (s.equals("Fahrenheit to Celsius")){
-				t.setText("" + ((temperature - 32) * (5.0 / 9.0)));
-			}
+		if(s.equals("FtoC")){
+			try{
+		    		t.setText("" + FtoC(Integer.parseInt(t.getText())));
+		    } 
+		    catch (NumberFormatException exc){
+		        System.out.println(">:( insert number");
+		    }
 		}
-		catch (NumberFormatException exc) {
-		    t.setText(">:( insert number");
+	
+		if(s.equals("CtoF")){
+		    try{
+		    		t.setText("" + CtoF(Integer.parseInt(t.getText())));
+		    }
+		    catch (NumberFormatException exc){
+		    		System.out.println(">:( insert number");
+		    }
 		}
-    }
 
 }
 
