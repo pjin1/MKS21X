@@ -60,6 +60,11 @@ public class temperatureWindow extends JFrame implements ActionListener {
 		    }
 		}
     }
+    
+    public static void main (String[] args) {
+    		temperatureWindow var = new temperatureWindow();
+    		var.setVisible(true);
+    }
 
 }
 
