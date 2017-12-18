@@ -28,7 +28,7 @@ public class temperatureWindow extends JFrame implements ActionListener {
 	
 	    t.addActionListener(this);
 		FtoC.addActionListener(this);
-t		CtoF.addActionListener(this);
+		CtoF.addActionListener(this);
 		
 		pane.add(t);
 		pane.add(FtoC);
@@ -37,15 +37,6 @@ t		CtoF.addActionListener(this);
     }
     
 
-	    public static double CtoF(double t){
-	        return t * 9.0 / 5.0 + 32;
-	    }
-
-	    public static double FtoC(double t){ 
-	        return (t - 32) * 5.0 / 9.0 ;
-	    }
-
-    
     
     public void actionPerformed(ActionEvent e){
 		String s = e.getActionCommand();
@@ -54,7 +45,7 @@ t		CtoF.addActionListener(this);
 		
 		if(s.equals("FtoC")){
 			try{
-		    		t.setText("" + FtoC(temp));
+		    		t.setText("" + (temp - 32) * 5.0 / 9.0);
 		    } 
 		    catch (NumberFormatException exc){
 		        System.out.println(">:( insert number");
@@ -63,7 +54,7 @@ t		CtoF.addActionListener(this);
 	
 		if(s.equals("CtoF")){
 		    try{
-		    		t.setText("" + CtoF(temp)));
+		    		t.setText("" + (temp * 9.0 / 5.0 + 32));
 		    }
 		    catch (NumberFormatException exc){
 		    		System.out.println(">:( insert number");
