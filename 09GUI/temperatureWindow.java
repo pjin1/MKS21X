@@ -33,7 +33,6 @@ public class temperatureWindow extends JFrame implements ActionListener {
 		pane.add(t);
 		pane.add(FtoC);
 		pane.add(CtoF);
-	    }
     }
     
 
