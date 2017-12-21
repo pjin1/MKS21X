@@ -60,18 +60,19 @@ public class Sorts {
   }
 
   public static void bubbleSort(int[] ary) {
-	  boolean switched;
-	  for (int i = 0; i < ary.length; i++) {
-		  for (int j = 0; j < ary.length-i-1; i++) {
+	  boolean switched= true;
+	  for (int i = 0; i < ary.length && switched; i++) {
+		  switched = false;
+		  for (int j = 0; j < ary.length-i-1; j++) {
 			  if (ary[j] > ary[j+1]){
 				  swap(ary,j,j+1);
 				  switched = true;
-			  }    
-		  }
-	  }
-	  if (switched==false) {
-		  break;
-	  }
+			  }
+                  }
+          }
+			  	
+			  
+	  
   }
   
 }
