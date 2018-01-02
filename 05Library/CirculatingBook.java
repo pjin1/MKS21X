@@ -4,7 +4,8 @@ public class CirculatingBook extends LibraryBook{
 
     public CirculatingBook(String author, String title, String ISBN, String callNumber){
     		super(author, title, ISBN, callNumber);
-    		returned();
+    		currentHolder = null;
+    		dueDate = null;
     }
     
 	public String getCurrentHolder(){

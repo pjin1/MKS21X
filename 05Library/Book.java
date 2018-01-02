@@ -7,19 +7,19 @@ public class Book{
     		this.ISBN = ISBN;
     }
 
-    public getAuthor(){ 
+    public String getAuthor(){ 
     		return author;
     }
     
-    public getTitle(){
+    public String getTitle(){
     		return title;
     }
 
-    public getISBN(){
+    public String getISBN(){
     		return ISBN;
     }
 
-    public toString(){
+    public String toString(){
     		return title + ", " + author + ", " + ISBN;
     }
 
