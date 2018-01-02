@@ -87,7 +87,7 @@ public class SuperArray {
     		}
     		String[] temp = new String[data.length];
     	
-		if (index < 0 || index >= size()){
+		if (index < 0 || index > size()){
 			throw new IndexOutOfBoundsException();
 		}
 		if (data.length == size){
