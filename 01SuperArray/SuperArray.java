@@ -1,20 +1,20 @@
-public class SuperArray implements Iterable<String>{
+import java.util.*;
+
+public class SuperArray {
 	
     private String[] data;
-    private int size;
+    private int size = 0;
 
     public SuperArray() {
         data = new String[10];
-        size = 0;
     }
     
     public SuperArray(int capacity) {
     		data = new String[capacity];
-        size = 0;
     }
 
     public void clear() {
-        data = new String[data.length];
+        data = new String[10];
 		size = 0;
     }
 
@@ -31,120 +31,125 @@ public class SuperArray implements Iterable<String>{
             resize();
         }
         data[size] = element;
-        size ++;
+        size++;
         return true;
     }
     
     public String toString() {
-    	String a = "[";
-        for (int i = 0 ; i < data.length ; i++) {
+	    	if (size == 0){
+	    	    return "[]";
+	    	}
+    		String a = "[";
+        for (int i = 0 ; i < size() - 1 ; i++) {
             a += data[i];
-            if (i != data.length - 1){
-			    a += ", ";
-			}
+            a += ", ";	
         }
-        return a + "]";
+        return a + data[size()-1] + "]";
     }
 
     public String get(int index){
-    	if (index < 0 || index >= size()) {
-    		System.out.println("error");
-    		return null;
-    	}
-        return data[index];
+	    	if (index < 0 || index >= size()) {
+	    		throw new IndexOutOfBoundsException();
+	    	}
+	        return data[index];
     }
 
     public String set(int index, String element) {
-    	if (index < 0 || index >= size()) {
-    		System.out.println("error");
-    		return null;
-    	}
-    	String a = data[index];
-    	data[index] = element;
-    	if (index >= size){
-			size++;
-	    }
-    	return a;
+    		if (index < 0 || index >= size()) {
+    			throw new IndexOutOfBoundsException();
+	    	}
+	    	String a = data[index];
+	    	data[index] = element;
+	   
+	    	return a;
     }
     
     private void resize(){
-		String[] a = new String[size * 2];
+    		String[] a = new String[size * 2];
 		for (int i = 0; i < size; i++){
-	    	a[i] = data[i];
+	    		a[i] = data[i];
 		}
 		data = a;
     }
     
     public boolean contains(String element){
 		for (int i = 0; i < size; i++){
-	    	if (data[i].equals(element)){
-			return true;
-	    	}
+		    	if (data[i].equals(element)){
+				return true;
+		    	}
 		}
 		return false;
     }
     
     public void add(int index, String element){
-		if (index < 0 || index >= size){
-	    	System.out.println("Error");
+    		if(data.length == size) {
+    			resize();
+    		}
+    		String[] temp = new String[data.length];
+    	
+		if (index < 0 || index >= size()){
+			throw new IndexOutOfBoundsException();
 		}
-		if (index == size){
-	    	add(element);
+		if (data.length == size){
+	    		resize();
 		}
-		if (index < size){
-	    	size++;
-	    	resize();
-	    	for (int i = size - 1; i > index; i--){
-				data[i] = data[i-1];
-	    	}
-	    	data[index] = element;
+		
+		for (int i = 0; i < index; i++){
+			temp[i] = data[i];
 		}
+		temp[index] = element;
+		for (int i=index; i<size; i++){
+		    temp[i+1] = data[i];
+		}
+		data = temp;
+		size+=1;
     }
-
+    
     public int indexOf(String element){
 		for (int i = 0; i < size; i++){
-	    	if (data[i].equals(element)){
-				return i;
-	    	}
+		    	if (data[i].equals(element)){
+					return i;
+		    	}
 		}
 		return -1;
     }
 
     public int lastIndexOf(String element){
-		int last = -1;
-		for (int i = 0; i < size; i++){
-	    	if (data[i].equals(element)){
-				last = i;
-	    	}
+		for (int i = size-1 ; i >= 0 ; i--){
+		    	if (data[i].equals(element)){
+					return i;
+		    	}
 		}
-		return last;
+		return -1;
     }
 
     public String remove(int index){
 		if (index < 0 || index >= size){
-	    	System.out.println("Error");
-	    	return null;
+			throw new IndexOutOfBoundsException();
 		}
 		String a = data[index];
 		String[] temp = new String[size - 1];
 		for (int i = 0; i < index; i++){
-	    	temp[i] = data[i];
+			temp[i] = data[i];
 		}
-		size--;
-		for (int i = index; i < size; i++){
-	    	temp[i] = data[i+1];
+		for (int i = index; i < size - 1 ; i++){
+	    		temp[i] = data[i+1];
 		}
 		data = temp;
+		size -= 1;
 		return a;
     }
 	
     public boolean remove(String element){
 		if (contains(element)){
-	    	remove(indexOf(element));
-	    	return true;
+	    		remove(indexOf(element));
+	    		return true;
 		}
 		return false;
     }
+   
+    
+
 }
     
 
