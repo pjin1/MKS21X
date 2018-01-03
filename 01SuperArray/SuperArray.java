@@ -147,9 +147,7 @@ public class SuperArray {
 		}
 		return false;
     }
-   
-    
-
+   //Crystal helped me debug!
 }
     
 
