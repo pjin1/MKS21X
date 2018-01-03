@@ -1,26 +1,26 @@
 import java.util.*;
-import java.io.*;
 
 public class SuperArrayIterator implements Iterator<String>{
-    private int i;
-    private SuperArray a;
+    private int current, last;
+    private SuperArray ary;
 	
-    public SuperArrayIterator(SuperArray arr){
-    		a = new SuperArray(arr.size());
-    		for (int j = 0; j < arr.size(); j++){
-    			a.add(arr.get(j));
+    public SuperArrayIterator(SuperArray arr, int start, int end){
+    		current = start;
+		last = end;
+    		ary = new SuperArray(arr.size());
+    		for (int i = 0; i < arr.size(); i++){
+    			ary.add(arr.get(i));
     		}
-    		i = 0;
     }
     
     public boolean hasNext(){
-    		return a.size() != 0;
+    		return current <= last;
 	}
     
     public String next(){
     		try{
-    			i+=1;
-    			return a.remove(0);
+    			current++;
+    			return ary.remove(0);
     		}catch(NoSuchElementException e){
     			throw e;
     		}
