@@ -150,7 +150,7 @@ public class SuperArray implements Iterable<String> {
     }
    
     public Iterator<String> iterator(){
-    		return new SuperArrayIterator(this,start,end);
+    		return new SuperArrayIterator(this,0, size() - 1);
     }
 
 }

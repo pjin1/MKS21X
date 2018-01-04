@@ -15,12 +15,13 @@ public class SuperArrayIterator implements Iterator<String>{
 	}
     
     public String next(){
-    		try{
-    			current++;
-    			return ary.get(current-1);;
-    		}catch(NoSuchElementException e){
-    			throw e;
-    		}
+	    	if(hasNext()) {
+	    	    current++;
+	    	}
+	    	else {
+	    	    System.exit(0);
+	    	}
+	    	return data[current - 1];
     }
     
     public void remove(){
