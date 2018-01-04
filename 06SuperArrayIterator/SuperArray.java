@@ -4,7 +4,6 @@ public class SuperArray implements Iterable<String> {
 	
     private String[] data;
     private int size = 0;
-    private int start, end;
     
     public SuperArray() {
         data = new String[10];

@@ -21,7 +21,7 @@ public class SuperArrayIterator implements Iterator<String>{
 	    	else {
 	    	    System.exit(0);
 	    	}
-	    	return data[current - 1];
+	    	return ary.get(current - 1);
     }
     
     public void remove(){
