@@ -7,10 +7,7 @@ public class SuperArrayIterator implements Iterator<String>{
     public SuperArrayIterator(SuperArray arr, int start, int end){
     		current = start;
 		last = end;
-    		ary = new SuperArray(arr.size());
-    		for (int i = 0; i < arr.size(); i++){
-    			ary.add(arr.get(i));
-    		}
+    		ary = arr;
     }
     
     public boolean hasNext(){
@@ -20,7 +17,7 @@ public class SuperArrayIterator implements Iterator<String>{
     public String next(){
     		try{
     			current++;
-    			return ary.remove(0);
+    			return ary.get(current-1);;
     		}catch(NoSuchElementException e){
     			throw e;
     		}
